@@ -1,0 +1,282 @@
+html { box-sizing: border-box; }
+*, ::after, ::before { box-sizing: inherit; }
+
+$font-default: 'Montserrat', sans-serif;
+$font-second: 'Open Sans', sans-serif;
+$regular: 400;
+$bold: 600;
+
+$color-primary: #f03000;
+$color-secondary: #000;
+$color-light: #ffffff;
+$color-grey: #f0f0f0;
+$color-gradient: #80808080;
+
+$spacer: 40px;
+
+body {
+    padding: 0 10px;
+	margin: 0;
+    background-color: $color-light;
+    font-family: $font-default;
+    font-size: 16px;
+    font-weight: $regular;
+    line-height: 1.4;
+    color: $color-secondary
+}
+
+.trip-section,
+.card-section,
+.last-minute-section,
+.new-section,
+.footer {
+    @media screen and(min-width: 960px) {
+        max-width: 960px;
+        margin: 0 auto;
+    }
+}
+
+.title-primary{
+    font-size: 24;
+    color: $color-secondary;
+    font-weight: $bold;
+    margin-top: 0;
+}
+
+.nav{
+    text-align: center;
+    padding: 35px 0 30px 0;
+
+    @media screen and(min-width: 750px) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0 10px 0;
+    }
+    @media screen and(min-width: 960px) {
+        max-width: 960px;
+        margin: 0 auto;
+    }
+
+    &__logo {
+        width: 180px;
+        margin-bottom: 20px;
+
+        @media screen and(min-width: 750px) {
+            margin-bottom: 0;
+            margin-left: 20px;
+        }
+    }
+
+    &__menu {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__link {
+        display: inline-block;
+        text-decoration: none;
+        color: $color-primary;
+        padding: $spacer / 2 ;
+        font-size: 15px;
+        font-weight: $regular;
+        &:hover {
+            background-color: $color-primary;
+            color: $color-light;
+        }
+        @media screen and(min-width: 750px) {
+            font-size: 18px ;
+        }
+    }
+}
+
+.trip{
+    color: $color-light;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+
+    &__price {
+        font-size: 18px;
+        background-color: $color-primary;
+        display: inline-block;
+        padding: 5px 10px;
+        margin: 0;
+    }
+    &__title, &__text {
+        margin: 0;
+    }
+    &__title {
+        font-size: 20px;
+    }
+}
+
+.grid-col3-row2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 240px 150px 150px;
+    row-gap: 20px;
+
+    @media screen and(min-width: 750px) {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 380px 180px;
+        column-gap: 20px;
+    }
+    @media screen and(min-width: 960px) {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 180px 180px;
+    }
+}
+
+.trip-1 {
+    background: linear-gradient(to bottom ,#29252518 50%, #00000099 100%), 
+    url(./../images/palmy.png) no-repeat center/cover;
+
+    .trip__title {
+        font-size: 28px;
+    }
+
+    @media screen and(min-width: 750px) {
+        grid-column: 1 / span 2;
+    }
+    @media screen and(min-width: 960px) {
+        grid-column: 1 / span 2 ;
+        grid-row: 1 / span 2;
+    }   
+}
+.trip-2 {
+    background: linear-gradient(to bottom ,#29252518 50%, #00000099 100%), 
+    url(./../images/jezero2.png) no-repeat center/cover;
+}
+.trip-3 {
+    background: linear-gradient(to bottom ,#29252518 50%, #00000099 100%), 
+    url(./../images/nakole.png) no-repeat center/cover;
+}
+
+.trip-4 {
+    background: linear-gradient(to bottom ,#29252518 50%, #00000099 100%), 
+    url(./../images/lodicka.png) no-repeat center/cover;
+
+    .trip__title {
+        font-size: 28px;
+    }
+
+    @media screen and(min-width: 750px) {
+        grid-column: 1 / span 2;
+    }
+    @media screen and(min-width: 960px) {
+        grid-column: 2 / span 2 ;
+        grid-row: 1 / span 2;
+    }   
+}
+.trip-5 {
+    background: linear-gradient(to bottom ,#29252518 50%, #00000099 100%), 
+    url(./../images/podkova.png) no-repeat center/cover;
+}
+.trip-6 {
+    background: linear-gradient(to bottom ,#29252518 50%, #00000099 100%), 
+    url(./../images/zatoka.png) no-repeat center/cover;
+}
+
+.grid-col4 {
+    padding: 30px 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 10px;
+
+    @media screen and(min-width: 750px) {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        gap: 20px;
+        padding: 40px 0;
+    }
+    @media screen and(min-width: 960px) {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+    }
+}
+
+.card{
+    background-color: $color-grey;
+    padding: 25px;
+    display: flex;
+    align-items: flex-start;
+    
+    &__img {
+        width: 100%;
+        max-width: 35px;
+        margin-right: 25px;
+        
+        @media screen and(min-width: 750px){
+            height: 40px;
+            margin-right: 0;
+            margin-bottom: 5px;
+        }
+    }
+    &__title {
+        margin: 0;
+        font-size: 18px;
+        font-weight: $regular;
+        color: $color-primary;
+    }
+    &__text {
+        font-family: $font-second;
+        font-size: 16px;
+        margin: 10px 0 0 0;
+    }
+
+    @media screen and(min-width: 750px){
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.new-section {
+    padding: 30px 0;
+}
+
+.grid-col3-row1 {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 10px;
+
+    @media screen and(min-width: 960px) {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+        gap: 20px;
+    }
+}
+
+.new {
+    background-color: $color-grey;
+    padding: 20px; 
+    &__date {
+        color: #888888;
+        margin: 0;
+    }
+    &__title {
+        font-size: 16px;
+        color: $color-primary;
+        font-weight: $regular;
+        margin: 5px 0 5px 0;
+    }
+    &__text {
+        margin: 0;
+    }
+}
+
+.footer {
+    background-color: #444444;
+    color: $color-light;
+    text-align: center;
+    &__text {
+        margin: 0;
+        padding: 20px;
+    }
+}
